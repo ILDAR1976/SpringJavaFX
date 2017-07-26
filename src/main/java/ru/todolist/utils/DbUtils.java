@@ -1,11 +1,13 @@
 package ru.todolist.utils;
 
 import org.apache.derby.drda.NetworkServerControl;
-import org.apache.log4j.Logger;
+
 import java.net.InetAddress;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DbUtils {
-	private static Logger LOG = Logger.getLogger(DbUtils.class);
+	private static Logger LOG = LogManager.getLogger(DbUtils.class);
 	private static NetworkServerControl server;
 
 	public static void startDB() throws Exception {

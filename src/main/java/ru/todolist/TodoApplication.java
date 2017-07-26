@@ -1,6 +1,8 @@
 package ru.todolist;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,7 +12,7 @@ import ru.todolist.utils.DbUtils;
 import ru.todolist.utils.SpringFXMLLoader;
 
 public class TodoApplication extends Application {
-	private static Logger LOG = Logger.getLogger(TodoApplication.class);
+	private static Logger LOG = LogManager.getLogger(TodoApplication.class);
 	   
     public static void main(String[] args) {
         launch(args);

@@ -3,7 +3,8 @@ package ru.todolist.utils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.util.Callback;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -20,7 +21,7 @@ import java.net.URL;
 
 public class SpringFXMLLoader {
 
-    private static Logger LOG = Logger.getLogger(SpringFXMLLoader.class);
+    private static Logger LOG = LogManager.getLogger(SpringFXMLLoader.class);
     
     private static final ApplicationContext APPLICATION_CONTEXT  = new AnnotationConfigApplicationContext(AppConfig.class);
 
@@ -33,7 +34,7 @@ public class SpringFXMLLoader {
 			FXMLLoader loader = new FXMLLoader();
 			
 			loader.setControllerFactory(new Callback<Class<?>, Object>() {
-                @Override
+               
                 public Object call(Class<?> aClass) {
                 	return APPLICATION_CONTEXT.getBean(aClass);
                  }
